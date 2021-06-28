@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Change Background Color with Dropdown</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+<div class="container">
+    <select id="dropdown" onchange="changeBackgroundColor()">
+        <option value="#628bd5">Blue</option>
+        <option value="#ffff00">Yellow</option>
+        <option value="#8bc34a">Green</option>
+        <option value="#ff69b4">Pink</option>
+        <option value="#800080">Purple</option>
+    </select>
+    <div id="color"></div>
+</div>
+</body>
+<script>
+    changeBackgroundColor();
+
+    function changeBackgroundColor() {
+        var dropdown = document.getElementById('dropdown');
+        document.body.style.backgroundColor = dropdown.value;
+        document.getElementById('color').innerText = dropdown.options[dropdown.selectedIndex].text;
+    }
+</script>
+</html>
